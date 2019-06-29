@@ -25,7 +25,10 @@ export class Matrix {
 
     get(x, y) {
         const col = this.grid[x];
-        return col ? col[y] : undefined;
+        if (col) {
+            return col[y];
+        }
+        return undefined;
     }
 
     set(x, y, value) {

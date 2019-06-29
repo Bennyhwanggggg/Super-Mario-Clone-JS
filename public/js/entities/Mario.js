@@ -5,7 +5,7 @@ import Killable from '../traits/Killable.js';
 import Physics from '../traits/Physics.js';
 import Solid from '../traits/Solid.js';
 import Stomper from '../traits/Stomper.js';
-import {loadSpriteSheet} from '../loaders.js';
+import { loadSpriteSheet } from '../loaders.js';
 
 const SLOW_DRAG = 1/1000;
 const FAST_DRAG = 1/5000;

@@ -15,9 +15,9 @@ export default class KeyboardState {
     }
 
     handleEvent(event) {
-        const { keyCode } = event;
+        const { code } = event;
 
-        if (!this.keyMap.has(keyCode)) {
+        if (!this.keyMap.has(code)) {
             return;
         }
 
@@ -25,7 +25,7 @@ export default class KeyboardState {
 
         const keyState = event.type === 'keydown' ? PRESSED : RELEASED;
         
-        if (this.keyStates.get(keyCode) == keyState) {
+        if (this.keyStates.get(code) == keyState) {
             return;
         }
 

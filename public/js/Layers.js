@@ -1,7 +1,7 @@
 export function createBackgroundLayer(level, sprites) {
     const buffer = document.createElement('canvas');
     buffer.width = 256; 
-    buffer.height = 250;
+    buffer.height = 240;
 
     const context = buffer.getContext('2d');
 
@@ -16,7 +16,9 @@ export function createBackgroundLayer(level, sprites) {
 
 export function createSpriteLayer(entity) {
     return function drawSpriteLayer(context) {
-        entity.draw(context);
+        entities.forEach(entity => {
+            entity.draw(context);
+        });
     };
 }
 

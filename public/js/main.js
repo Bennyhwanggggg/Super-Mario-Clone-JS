@@ -1,20 +1,11 @@
 import { loadLevel } from './loaders.js';
-import { createBackgroundLayer } from './Layers.js';
+import { createBackgroundLayer, createSpriteLayer } from './Layers.js';
 import Compositor from './Compositor.js';
 import { createMario } from './entities.js';
 import { loadBackgroundSprites } from './sprites.js';
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
-
-function createSpriteLayer(entity) {
-    return function drawSpriteLayer(context) {
-        entity.draw(context);
-    };
-}
-
-
-
 
 
 Promise.all([
@@ -25,7 +16,7 @@ Promise.all([
 .then(([mario, backgroundSprites, level]) => {
     const comp = new Compositor();
     const backgroundLayer = createBackgroundLayer(level.backgrounds, backgroundSprites);
-    comp.layers.push(backgroundLayer);
+    // comp.layers.push(backgroundLayer);
 
     const gravity = 0.5;
 

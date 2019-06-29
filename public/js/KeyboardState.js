@@ -29,9 +29,9 @@ export default class KeyboardState {
             return;
         }
 
-        this.keyStates.set(keyCode, keyState);
+        this.keyStates.set(code, keyState);
 
-        this.keyMap.get(keyCode)(keyState); // call the callback
+        this.keyMap.get(code)(keyState); // call the callback
     }
 
     listenTo(window){

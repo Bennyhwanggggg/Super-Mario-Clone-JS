@@ -12,6 +12,10 @@ export default class Jump extends Trait {
         this.engageTime = this.duration;
     }
 
+    cancel() {
+        this.engageTime = 0;
+    }
+
     update(entity, deltaTime) {
         if (this.engageTime > 0) {
             entity.vel.y = -this.velocity;

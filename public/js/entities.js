@@ -1,23 +1,20 @@
-import Entity from './Entity.js';
-import Velocity from './traits/Velocity.js';
-import Jump from './traits/Jump.js';
-import { loadMarioSprite } from './sprites.js';
-import Go from './traits/Go.js';
+import { loadMario } from './entities/Mario.js';
+import { loadGoomba } from './entities/Goomba.js';
+import { loadKoopa } from './entities/Koopa.js';
 
-export function createMario() {
-    return loadMarioSprite()
-    .then(sprite => {
-        const mario = new Entity();
-        mario.size.set(14, 16);
 
-        mario.addTrait(new Go());
-        // mario.addTrait(new Velocity());
-        mario.addTrait(new Jump());
+export function loadEntities() {
+    const entityFactories = {};
 
-        mario.draw = function drawMario(context) {
-            sprite.draw('idle', context, 0, 0)
-        }
+    function addAs(name) {
+        return factory => entityFactories[name] = factory;
+    }
 
-        return mario;
-    })
+
+    return Promise.all([
+        loadMario().then(addAs('mario')),
+        loadGoomba().then(addAs('goomba')),
+        loadKoopa().then(addAs('koopa')),
+    ])
+    .then(() => entityFactories);
 }

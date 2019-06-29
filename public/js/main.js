@@ -1,10 +1,10 @@
 import Camera from './Camera.js';
 import Timer from './Timer.js';
-import {loadLevel} from './loaders.js';
-import {createMario} from './entities.js';
-import {createCollisionLayer, createCameraLayer} from './layers.js';
-import {setupKeyboard} from './input.js';
-import {setupMouseControl} from './debug.js';
+import { loadLevel } from './loaders.js';
+import { createMario } from './entities.js';
+import { createCollisionLayer, createCameraLayer } from './layers.js';
+import { setupKeyboard } from './input.js';
+import { setupMouseControl } from './debug.js';
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');

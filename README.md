@@ -1,5 +1,7 @@
 # Super Mario Clone JS
-Super Mario Clone using Vanilla JavaScript
+Super Mario Clone using Vanilla JavaScript.  
+
+Live version deployed to heroku at: https://super-mario-clone-js.herokuapp.com/
 
 ## How to run
 Installing the dependencies

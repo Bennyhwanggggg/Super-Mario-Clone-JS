@@ -1,7 +1,7 @@
 # Super Mario Clone JS
 Super Mario Clone using Vanilla JavaScript.  
 
-Live version deployed to AWS Elastic Beanstalk at: http://super-mario-clone-js.ap-northeast-1.elasticbeanstalk.com/
+Live version deployed to AWS S3 http://super-mario-clone-js.s3-website-ap-northeast-1.amazonaws.com/
 
 ## How to run
 Installing the dependencies
